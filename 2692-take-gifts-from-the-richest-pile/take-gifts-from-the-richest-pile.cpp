@@ -5,7 +5,7 @@ public:
         for(auto it:gifts)
             pq.push(it);
         long long ans=0;
-        while(!pq.empty()&&k--){
+        while(k--){
             int t=sqrt(pq.top());
             pq.pop();
             pq.push(t);
