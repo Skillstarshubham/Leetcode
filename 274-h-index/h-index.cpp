@@ -7,6 +7,7 @@ public:
         for(int i = 0; i < n; i++) {
             if(c[i] >= n - i) {
                 maxi = max(maxi, n - i);
+                break;
             }
         }
         return maxi;
