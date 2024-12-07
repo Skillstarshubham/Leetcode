@@ -1,9 +1,9 @@
 class Solution {
 public:
-    set<vector<int>>st;
+    vector<vector<int>>ans;
     void fun(vector<int>& candidates,vector<int>& temp,int start,int target){
         if(target==0){
-            st.insert(temp);
+            ans.push_back(temp);
             return;
         }
         if(target<0)return;
@@ -18,10 +18,6 @@ public:
         vector<int>temp;
         sort(candidates.begin(),candidates.end());
         fun(candidates,temp,0,target);
-        vector<vector<int>>ans;
-        for(auto it:st){
-            ans.push_back(it);
-        }
         return ans;
     }
 };
