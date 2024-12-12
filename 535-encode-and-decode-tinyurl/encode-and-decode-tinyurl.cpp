@@ -2,17 +2,13 @@ class Solution {
 public:
     // Encodes a URL to a shortened URL.
     string encode(string longUrl) {
-        for(int i=0;i<longUrl.size();i++){
-            longUrl[i]=char(int(longUrl[i])+1);
-        }
+        longUrl[0]=char(int(longUrl[0])+1);
         return longUrl;
     }
 
     // Decodes a shortened URL to its original URL.
     string decode(string shortUrl) {
-        for(int i=0;i<shortUrl.size();i++){
-            shortUrl[i]=char(int(shortUrl[i])-1);
-        }
+        shortUrl[0]=char(int(shortUrl[0])-1);
         return shortUrl;
     }
 };
