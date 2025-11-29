@@ -1,23 +1,24 @@
 class Solution {
 public:
-    vector<string>ans;
-    void fun(string s,int n, int curr){
-        if(s.size()==n){
+    void fun(int n,string s,vector<string>&ans){
+        if(n==0){
             ans.push_back(s);
             return;
         }
         s.push_back('1');
-        fun(s,n,1);
+        fun(n-1,s,ans);
         s.pop_back();
-        if(curr!=0){
+        if(s.size()==0||s.back()=='1'){
             s.push_back('0');
-            fun(s,n,0);
+            fun(n-1,s,ans);
             s.pop_back();
         }
+        return;
     }
     vector<string> validStrings(int n) {
-        string s="";
-        fun(s,n,1);
+        vector<string>ans;
+        fun(n,"",ans);
         return ans;
+
     }
 };
